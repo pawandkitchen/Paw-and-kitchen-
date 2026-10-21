@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-GB">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#173d32">
+
+  <title>Paw and Kitchen | Everyday Essentials</title>
+
+  <style>
+
+    * { box-sizing: border-box; }
+
+    body {
+
+      margin: 0;
+
+      font-family: Arial, sans-serif;
+
+      color: #25352e;
+
+      background: #faf9f5;
+
+    }
+
+    header {
+
+      background: #173d32;
+
+      color: white;
+
+      padding: 24px 16px;
+
+      text-align: center;
+
+    }
+
+    header h1 { margin: 0; font-size: 30px; }
+
+    header p { margin-bottom: 0; }
+
+    nav {
+
+      padding: 14px;
+
+      text-align: center;
+
+      background: #e9eee5;
+
+    }
+
+    nav a {
+
+      color: #173d32;
+
+      margin: 0 10px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+    }
+
+    .hero {
+
+      padding: 55px 20px;
+
+      text-align: center;
+
+      background: #f0e9d9;
+
+    }
+
+    .hero h2 { font-size: 34px; margin: 0 0 12px; }
+
+    .hero p { line-height: 1.6; }
+
+    .section { padding: 28px 16px; max-width: 1000px; margin: auto; }
+
+    .categories {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+      gap: 16px;
+
+    }
+
+    .category {
+
+      background: white;
+
+      border: 1px solid #e2e5dc;
+
+      border-radius: 12px;
+
+      padding: 24px 16px;
+
+      text-align: center;
+
+    }
+
+    .emoji { font-size: 38px; }
+
+    .products {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+      gap: 16px;
+
+    }
+
+    .product {
+
+      background: white;
+
+      border-radius: 12px;
+
+      padding: 18px;
+
+      border: 1px solid #e2e5dc;
+
+    }
+
+    .product button, .checkout {
+
+      background: #173d32;
+
+      color: white;
+
+      border: 0;
+
+      border-radius: 7px;
+
+      padding: 12px;
+
+      width: 100%;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+    }
+
+    .notice { color: #66583d; font-size: 13px; line-height: 1.5; }
+
+    footer {
+
+      background: #173d32;
+
+      color: white;
+
+      padding: 25px 16px;
+
+      text-align: center;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>Paw and Kitchen</h1>
+
+    <p>Everyday essentials, thoughtfully chosen.</p>
+
+  </header>
+
+  <nav>
+
+    <a href="#categories">Shop</a>
+
+    <a href="#products">Products</a>
+
+    <a href="#cart">Basket (<span id="count">0</span>)</a>
+
+  </nav>
+
+  <section class="hero">
+
+    <h2>Welcome to Paw and Kitchen</h2>
+
+    <p>Discover practical favourites for your pets, kitchen and everyday life.</p>
+
+  </section>
+
+  <section class="section" id="categories">
+
+    <h2>Shop by category</h2>
+
+    <div class="categories">
+
+      <div class="category">
+
+        <div class="emoji">🐾</div>
+
+        <h3>Pet Essentials</h3>
+
+        <p>Everyday care for your pets.</p>
+
+      </div>
+
+      <div class="category">
+
+        <div class="emoji">🍳</div>
+
+        <h3>Kitchen Supplies</h3>
+
+        <p>Useful helpers for your home.</p>
+
+      </div>
+
+      <div class="category">
+
+        <div class="emoji">✏️</div>
+
+        <h3>Stationery</h3>
+
+        <p>Essentials for work and study.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="products">
+
+    <h2>Sample products</h2>
+
+    <p class="notice">These are demonstration listings, not products currently available to purchase.</p>
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="emoji">🐶</div>
+
+        <h3>Pet Care Essentials</h3>
+
+        <p>Sample listing</p>
+
+        <p>£4.99</p>
+
+        <button onclick="addToCart('Pet Care Essentials',4.99)">Add to basket</button>
+
+      </article>
+
+      <article class="product">
+
+        <div class="emoji">🥄</div>
+
+        <h3>Kitchen Utensil Set</h3>
+
+        <p>Sample listing</p>
+
+        <p>£8.99</p>
+
+        <button onclick="addToCart('Kitchen Utensil Set',8.99)">Add to basket</button>
+
+      </article>
+
+      <article class="product">
+
+        <div class="emoji">📓</div>
+
+        <h3>Everyday Notebook</h3>
+
+        <p>Sample listing</p>
+
+        <p>£3.49</p>
+
+        <button onclick="addToCart('Everyday Notebook',3.49)">Add to basket</button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="cart">
+
+    <h2>Your basket</h2>
+
+    <div id="items">Your basket is empty.</div>
+
+    <h3 id="total">Total: £0.00</h3>
+
+    <p class="notice">Demo basket only. Online payments are not enabled.</p>
+
+  </section>
+
+  <footer>
+
+    <p>© 2026 Paw and Kitchen</p>
+
+    <p>Everyday essentials for home and pets.</p>
+
+  </footer>
+
+  <script>
+
+    const cart = [];
+
+    function addToCart(name, price) {
+
+      cart.push({name, price});
+
+      renderCart();
+
+    }
+
+    function renderCart() {
+
+      document.getElementById('count').textContent = cart.length;
+
+      document.getElementById('items').innerHTML = cart.length
+
+        ? cart.map((item, i) =>
+
+          `<p>${item.name} — £${item.price.toFixed(2)}
+
+          <button onclick="removeItem(${i})" style="width:auto;padding:5px 10px">Remove</button></p>`
+
+        ).join('')
+
+        : 'Your basket is empty.';
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+      document.getElementById('total').textContent = 'Total: £' + total.toFixed(2);
+
+    }
+
+    function removeItem(index) {
+
+      cart.splice(index, 1);
+
+      renderCart();
+
+    }
+
+  </script>
+
+</body>
+
+</html>
